@@ -19,13 +19,12 @@ install:
   - npm install -g yarn
 
 script:
-  - yarn
   - yarn lint
   - yarn build --base-href https://jnrndn.github.io/travisci-angular-ghpages/
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist
+  local_dir: dist/travisci-gh-pages
   on:
     branch: master
